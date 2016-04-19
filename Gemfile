@@ -2,4 +2,10 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
-gem 'sinarta'
+gem 'sinatra'
+
+gem 'httparty'
+
+gem 'json'
+
+gem 'nokogiri'
