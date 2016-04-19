@@ -9,17 +9,16 @@ require 'nokogiri'
 
 get '/' do
 
-stock = params[:stock]
+stock = params[:stock].downcase
 
 url = "http://finance.yahoo.com/q?s=#{stock}"
  response = HTTParty.get url
-
 
  dom = Nokogiri::HTML(response.body)
 
  my_span = dom.xpath("//span[@id='yfs_l84_#{stock}']").first
 
-"The Stock you Chose is currently at $#{my_span}"
+"The Stock you selected is currently at $#{my_span}"
 
 end
 
